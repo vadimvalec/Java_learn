@@ -46,7 +46,7 @@ public class ReadingFromFile {
         fw.close();
     }
 
-    public static void readFromFile(String fileName) throws IOException {
+   private static void readFromFile(String fileName) throws IOException {
         FileReader fr = new FileReader(fileName);
         Scanner scanner = new Scanner(fr);
 
@@ -58,7 +58,7 @@ public class ReadingFromFile {
 
     }
 
-    public static void deleteFile(String fileName) throws IOException {
+    private static void deleteFile(String fileName) throws IOException {
 
         File file = new File(fileName);
         Scanner scanner = new Scanner(file);
