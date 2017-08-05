@@ -5,26 +5,14 @@ import java.util.Scanner;
 public class JobWithFile {
 
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws IOException {
 
         WorkWithFile file = new WorkWithFile();
 
         Scanner input = new Scanner(System.in);
 
-        String fName="";
-
-        while(fName.equals("")==true) {
-            System.out.println("Введите имя файла:");
-            fName = input.nextLine();
-            if (fName.equals("")) try {
-                throw new IOException();
-            } catch (IOException e) {
-                // e.printStackTrace();
-
-            }
-
-        }
-
+        System.out.println("Введите имя файла:");
+        String fName = input.nextLine();
 
         String fileName = file.getFileName(fName); // создаем объект и задаем имя файла для работы
 
@@ -36,28 +24,16 @@ public class JobWithFile {
 
         if (action.equals("W") || action.equals("w") || action.equals("ц") || action.equals("Ц")) {
             // addToFile(fileName);
-            try {
-                file.addToFile(fileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            file.addToFile(fileName);
 
 
         }
         if (action.equals("R") || action.equals("r") || action.equals("к") || action.equals("К")) {
-            try {
-                file.readFromFile(fileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            file.readFromFile(fileName);
 
         }
         if (action.equals("D") || action.equals("d") || action.equals("в") || action.equals("В")) {
-            try {
-                file.deleteFile(fileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            file.deleteFile(fileName);
 
         }
     }
